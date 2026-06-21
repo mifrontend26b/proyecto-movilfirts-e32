@@ -1,31 +1,58 @@
-# La Puerta Tees - Plataforma Web 
+👕 La Puerta Tees - Plataforma de Pedidos
+Bienvenido al repositorio oficial de La Puerta Tees. Este proyecto es una aplicación web full-stack diseñada para gestionar pedidos de camisetas personalizadas, integrando un frontend dinámico y un backend robusto enfocado en la seguridad y la persistencia de datos.
 
-Proyecto desarrollado para la gestión de pedidos de camisetas estampadas, inspirado en la identidad turística de La Puerta, estado Trujillo.
+🚀 Características Principales
+Frontend: Interfaz moderna y adaptable con manejo de eventos para formularios.
 
-* Frontend: HTML5, CSS3, Vanilla JS (Fetch API).
-* Backend: Node.js, Express.js.
-* Base de Datos: MongoDB (Local).
-* Seguridad: Helmet, CORS, express-mongo-sanitize.
+Backend: API RESTful construida con Node.js y Express.
 
-## 🚀 Instrucciones de Ejecución Paso a Paso
+Seguridad: Implementación de capas de protección (Helmet, CORS, Express-Mongo-Sanitize, XSS-Clean) para prevenir vulnerabilidades comunes.
 
-Para ver el proyecto funcionando en su totalidad, es necesario levantar tanto la Base de Datos, el Servidor y el Frontend:
+Persistencia: Base de datos NoSQL con MongoDB para el almacenamiento estructurado de pedidos.
 
-PASO 1: Iniciar la Base de Datos
-1. Asegúrate de tener instalado MongoDB Compass o MongoDB Community Server en tu equipo.
-2. Inicia el servicio local de MongoDB (por defecto corre en el puerto 27017).
+🛠️ Requisitos Previos
+Para ejecutar este proyecto en tu entorno local, asegúrate de tener instalado:
 
-PASO 2: Iniciar el Servidor (Backend)
-1. Abre una terminal (Símbolo del sistema o VS Code Terminal) en la carpeta /backend.
-2. Ejecuta el comando: npm install (para instalar las dependencias de seguridad y express).
-3. Ejecuta el comando: npm start (o node server.js).
-4. Verás el mensaje: "✅ Conexión blindada y exitosa..." y "🚀 API RESTful Corriendo en el puerto 3000".
+Node.js (versión 18 o superior recomendada).
 
-PASO 3: Iniciar la Interfaz (Frontend)
-1. Abre la carpeta del Frontend en tu editor de código (ej. Visual Studio Code).
-2. Utiliza la extensión "Live Server" para ejecutar el archivo index.html.
-3. IMPORTANTE: Asegúrate de que Live Server esté corriendo en http://127.0.0.1:5500 para que el sistema de seguridad CORS del backend permita la conexión.
-4. Navega a la pestaña de "Contacto", llena el formulario y verifica la conexión exitosa con la base de datos.
-5.- ESPERAMOS QUE TENGAS MUCHO EXITO EN EL USO DE ESTA APLICACÓN WEB, RECUERDA QUE EL MANTENIMIENTO DEL CONTENIDO ES 
-  FUNDAMENTAL PARA EL EXITO.
- ACLARATORIA ESTA PALICACION CARECE DE USO RESPONSIVE, SOLO PARA ESCRITORIO SU FORMATO.
+MongoDB (instalado localmente o utilizando un servicio en la nube como MongoDB Atlas).
+
+Gestor de paquetes: npm (se instala automáticamente con Node.js).
+
+⚙️ Configuración y Ejecución
+Sigue estos pasos para poner el proyecto en marcha:
+
+1. Clonar el repositorio
+Bash
+git clone <url-de-tu-repositorio>
+cd <nombre-de-tu-carpeta>
+2. Instalar dependencias
+Navega a la carpeta del backend y ejecuta el siguiente comando para descargar todas las librerías necesarias:
+
+Bash
+npm install
+3. Iniciar MongoDB
+Asegúrate de que tu servicio de MongoDB esté corriendo localmente. Por defecto, la aplicación busca la base de datos en:
+mongodb://127.0.0.1:27017/lapuertatees
+
+4. Ejecutar el Servidor
+Inicia la API con el siguiente comando:
+
+Bash
+npm start
+Verás un mensaje en consola confirmando: 🚀 API RESTful Corriendo de manera segura en http://127.0.0.1:3000.
+
+5. Frontend
+Para visualizar la interfaz, abre el archivo index.html utilizando la extensión Live Server de Visual Studio Code (asegúrate de que esté configurada en el puerto 5500 para que el CORS permita la comunicación con la API).
+
+🔒 Arquitectura de Seguridad
+La aplicación incluye middleware de seguridad para proteger los datos de tus usuarios:
+
+Helmet: Asegura los encabezados HTTP.
+
+Rate Limiting: Control de carga (10kb) para mitigar ataques DoS.
+
+Sanitización: Filtrado de inyecciones NoSQL y ataques XSS (Cross-Site Scripting).
+
+📝 Licencia
+Este proyecto se encuentra bajo la licencia ISC
