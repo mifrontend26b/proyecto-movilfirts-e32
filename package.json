@@ -1,0 +1,16 @@
+{
+  "name": "proyect_entrega_e3",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "html-minimizer-webpack-plugin": "^6.0.0",
+    "html-webpack-plugin": "^5.6.7",
+    "mini-css-extract-plugin": "^2.10.2",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3"
+  }
+}

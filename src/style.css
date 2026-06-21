@@ -1,0 +1,305 @@
+/* ==========================================================================
+   ESTILOS MAESTROS CORREGIDOS - LA PUERTA TEES (DISEÑO MOBILE-FIRST- optimizacion de presentacion. segun proyecto 3.1 y wireframe hechos en figma)
+   ========================================================================== */
+:root {
+    --naranja-acento: #e76f51;
+    --verde-andino: #2a9d8f;
+    --texto-base: #264653;
+    --blanco: #ffffff;
+    --gris-claro: #f4f4f4;
+}
+
+/* Reset Estándar y Caja */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: var(--texto-base); 
+    line-height: 1.6; 
+    background-color: var(--blanco);
+}
+
+/* 1. Encabezado y Navegación (Base Móvil) */
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 20px; 
+    background: var(--blanco); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.logo-principal { 
+    max-width: 60px; 
+    height: auto; 
+    transition: transform 0.3s ease; 
+}
+
+.logo-principal:hover { 
+    transform: scale(1.05); 
+}
+
+/* Botón del Menú Móvil */
+#menu-btn { 
+    display: block; 
+    padding: 10px 15px; 
+    background: var(--naranja-acento); 
+    color: white; 
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 1rem;
+}
+
+/* Lista de navegación móvil (Oculta por defecto) */
+nav ul { 
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    background: var(--blanco); 
+    padding: 20px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Clase de JavaScript  activada al hacer clic */
+nav ul.active { 
+    display: flex; 
+}
+
+nav ul li { 
+    list-style: none; 
+    padding: 12px 0; 
+}
+
+nav ul li a { 
+    text-decoration: none; 
+    color: var(--texto-base); 
+    font-weight: bold; 
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--naranja-acento);
+}
+
+/* Estilos de Contenido General */
+main {
+    padding: 20px 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--texto-base);
+}
+
+/* 2.ZONA DE EFECTOS Y ANIMACIONES PARA DINAMIZAR LA WEB: Sección Hero - Efecto Parallax */
+.hero { 
+    height: 60vh; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/fondo.jpg'); 
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    text-align: center;
+    padding: 0 20px;
+    margin: -20px -15px 40px -15px; /* Extiende el fondo a los bordes */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6); 
+}
+
+.hero h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.hero .btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--naranja-acento);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.hero .btn-primary:hover {
+    background-color: #d65d40;
+}
+
+/* 3. Carrusel de Imágenes Autónomo */
+.carrusel-container { 
+    width: 100%; 
+    max-width: 600px; 
+    margin: 40px auto; 
+    overflow: hidden; 
+    position: relative; 
+    border: 4px solid var(--verde-andino); 
+    border-radius: 8px;
+}
+
+.carrusel-track { 
+    display: flex; 
+    width: 400%; 
+    animation: slide 15s infinite ease-in-out; 
+}
+
+.carrusel-slide { 
+    width: 100%; 
+}
+
+.carrusel-slide img { 
+    width: 100%; 
+    height: auto;
+    display: block; 
+}
+
+@keyframes slide {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-25%); }
+    50%, 70% { transform: translateX(-50%); }
+    75%, 95% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+/* 4. Tabla de Datos */
+.info-lugares {
+    margin: 40px 0;
+    overflow-x: auto; /* Permite scroll horizontal si la tabla es muy grande en móvil */
+}
+
+.tabla-completa {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+.tabla-completa th, 
+.tabla-completa td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-completa th {
+    background-color: var(--verde-andino);
+    color: white;
+}
+
+.tabla-completa tr:nth-child(even) {
+    background-color: var(--gris-claro);
+}
+
+/* 5. Efecto Acordeón HTML5 */
+.acordeon-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+details { 
+    background: var(--gris-claro); 
+    padding: 15px; 
+    margin: 15px 0; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background 0.3s; 
+}
+
+details[open] { 
+    border-left: 5px solid var(--naranja-acento); 
+    background: #eaeded;
+}
+
+summary { 
+    font-weight: bold; 
+    outline: none; 
+    font-size: 1.1rem;
+}
+
+/* Footer Estructural */
+footer {
+    background-color: var(--texto-base);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   6. MEDIA QUERIES - DISEÑO ADAPTATIVO PARA ESCRITORIO (PANTALLAS GRANDES- DISEÑO RESPONSIVO A PARTIR DE MOVILE FIRTS)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    header {
+        padding: 15px 40px;
+    }
+
+    /* Oculta el botón de menú tipo hamburguesa */
+    #menu-btn { 
+        display: none; 
+    }
+
+    /* Restablece la barra de enlaces en forma horizontal */
+    nav ul { 
+        display: flex; 
+        position: static; 
+        flex-direction: row; 
+        width: auto; 
+        background: none; 
+        box-shadow: none; 
+        padding: 0;
+    }
+
+    nav ul li { 
+        padding: 0 15px; 
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    /* Amplía la altura del Parallax en monitores */
+    .hero {
+        height: 80vh;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+}
